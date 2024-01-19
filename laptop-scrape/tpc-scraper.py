@@ -29,7 +29,7 @@ def tpcScrape(usernames:list) -> None:
 
     df = pd.DataFrame(results)
 
-    below = df.loc[(df["Price"] > 20000) & (df["Price"] < 30000)].sort_values("Price")
+    below = df.loc[(df["Price"] < 30000)].sort_values("Price")
     above = df.loc[df["Price"] > 30000].sort_values("Price")
 
     # Save the df to an .xlsx file

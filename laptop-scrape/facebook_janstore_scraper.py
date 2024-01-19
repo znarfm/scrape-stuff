@@ -32,7 +32,7 @@ for post in get_posts('janstore.laptops', pages=10, cookies=cookies):
     df = pd.DataFrame(results)
 
 # Price range (set your own)
-below = df.loc[(df["Price"] > 20000) & (df["Price"] < 30000)].sort_values("Price")
+below = df.loc[df["Price"] < 30000].sort_values("Price")
 above = df.loc[df["Price"] > 30000].sort_values("Price")
 
 # Output
